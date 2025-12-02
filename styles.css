@@ -105,7 +105,7 @@ body {
   min-height: 100svh;
   background-color: var(--color-slate-900);
   font-family: var(--ff-body);
-  font-size: 1.05rem;
+  font-size: clamp(1.05rem, 1vw, 1.5rem);
   color: var(--color-stone-600);
   line-height: 1.5;
 }
@@ -127,20 +127,26 @@ article {
   padding: clamp(1.5rem, 1vw, 2rem);
 }
 
-.main__content--heading {
-  color: var(--color-stone-900);
-  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
-  font-weight: var(--fw-regular);
-  margin-block-start: 1.5rem;
-  margin-block-end: 1.5rem;
-}
-
-
 main h1, main h2 {
   font-family: var(--ff-heading);
   line-height: 1.1;
   text-wrap: initial;
-  letter-spacing: 0.1rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: var(--fw-normal);
+  color: var(--color-brown-800);
+  margin-block-start: clamp(1.5rem, 1.5vw, 2rem);
+  margin-block-end: clamp(1.5rem, 2vw, 1.8rem);
+}
+
+.main__content--heading {
+  color: var(--color-stone-900);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: var(--fw-regular);
+  margin-block-start: 1.8rem;
+  margin-block-end: 1.4rem;
 }
 
 .main__subsection {
@@ -155,6 +161,7 @@ main h1, main h2 {
 .main__subsection--heading {
   color: var(--color-rose-800);
   font-family: var(--ff-body);
+  font-size: var(--fw-regular);
   font-weight: var(--fw-semibold);
   letter-spacing: 0rem;
   margin-block-start: 0;
@@ -165,12 +172,6 @@ main h1, main h2 {
   margin-block-end: clamp(1.5rem, 2vw, 1.8rem);
 }
 
-h2 {
-  font-size: 1.75rem;
-  color: var(--color-brown-800);
-  margin-block-start: clamp(1.5rem, 1.5vw, 2rem);
-  margin-block-end: clamp(1.5rem, 2vw, 1.8rem);
-}
 
 /* == List Styling == */
 li {
@@ -179,7 +180,7 @@ li {
 }
 
 ol {
-  padding-left: 1.5rem;
+  padding-inline-start: 1.5rem;
 }
 
 ol li::marker {
@@ -192,13 +193,13 @@ ol li {
 }
 
 ul {
-  padding-left: 0.625rem; /* extra left spacing for the whole UL container */
+  padding-inline-start: 0.625rem; /* extra left spacing for the whole UL container */
 }
 
 ul li {
   list-style: none; /*remove the browswer's default bullet */
   position: relative;
-  padding-left: 1.875rem; /* space for custom bullet */
+  padding-inline-start: 1.875rem; /* space for custom bullet */
 }
 
 ul li::before {
@@ -237,24 +238,8 @@ tbody tr:last-child td {
   border-bottom: none;
 }
 
-footer {
-  width: 100%;
-  height: 10vh;
-  background-color: var(--color-brown-800);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.attribution {
-  color: var(--color-rose-50);
-}
-
-.attribution a {
-  color: var(--color-stone-100);
-}
-
-
+/* == Media Queries for Larger Screen Sizes == */
 
 @media screen and (min-width: 43.75rem) {
   body {
@@ -267,11 +252,11 @@ footer {
   }
 
   main {
-    width: 50%;
-    max-width: 48.5rem;
+    width: 60%;
+    max-width: 46rem;
     background-color: var(--color-white);
     margin: 1rem;
-    padding: 1.5rem;
+    padding: 2.5rem;
     border-radius: 1.5rem;
   }
 
@@ -284,7 +269,4 @@ footer {
     padding: 0;
   }
 
-  footer {
-    display: none;
-  }
 }

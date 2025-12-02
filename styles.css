@@ -131,6 +131,7 @@ main h1, main h2 {
   font-family: var(--ff-heading);
   line-height: 1.1;
   text-wrap: initial;
+  transition: all 1s;
 }
 
 h2 {
@@ -246,6 +247,7 @@ tbody tr:last-child td {
     background-color: var(--color-stone-100);
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     font-size: 1rem;
   }
@@ -254,8 +256,8 @@ tbody tr:last-child td {
     width: 60%;
     max-width: 46rem;
     background-color: var(--color-white);
-    margin: 1rem;
-    padding: 2.5rem;
+    padding: 2.5rem 2.5rem 1rem;
+    margin: 5rem;
     border-radius: 1.5rem;
   }
 
